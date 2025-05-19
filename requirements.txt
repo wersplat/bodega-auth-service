@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+authlib
+python-jose[cryptography]
+python-dotenv
+httpx
+asyncpg
+pydantic[email]
+sentry-sdk
+fastapi.security
