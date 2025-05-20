@@ -1,0 +1,10 @@
+.env
+.env.dev
+.env.prod
+.env.test
+.env.local
+node_modules
+prisma
+build
+yarn.lock
+package-lock.json
