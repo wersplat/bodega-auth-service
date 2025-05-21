@@ -21,6 +21,8 @@ A FastAPI-based authentication service for esports-platform, providing Discord O
 - User management with SQLAlchemy
 - Health check endpoint
 
+---
+
 ## Setup
 1. Copy `.env.example` to `.env` and fill in the values:
     - `DATABASE_URL`
