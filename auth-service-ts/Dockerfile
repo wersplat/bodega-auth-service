@@ -11,8 +11,7 @@ FROM node:20-alpine AS prod
 WORKDIR /app
 
 # Install Doppler CLI
-RUN apk update && apk add --no-cache curl && \
-    curl -Ls https://cli.doppler.com/install.sh | sh
+RUN apk add --no-cache --repository https://packages.doppler.com/alpine/v3.18 main doppler
 
 COPY package.json package-lock.json ./
 RUN npm ci --only=production
