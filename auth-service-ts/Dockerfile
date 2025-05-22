@@ -4,6 +4,7 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
+RUN npx prisma generate
 RUN npm run build
 
 # Production-only image
@@ -22,6 +23,7 @@ RUN npm ci --only=production
 # Copy compiled output from build stage
 COPY --from=build /app/dist ./dist
 COPY --from=build /app/package.json ./
+COPY --from=build /app/node_modules/.prisma /app/node_modules/.prisma
 
 EXPOSE 3000
 
