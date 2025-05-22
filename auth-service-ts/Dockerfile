@@ -11,7 +11,10 @@ FROM node:20-alpine AS prod
 WORKDIR /app
 
 # Install Doppler CLI
-RUN apk add --no-cache --repository https://packages.doppler.com/alpine/v3.18 main doppler
+RUN apk add --no-cache wget \
+    && wget -q -t3 'https://packages.doppler.com/public/cli/rsa.8004D9FF50437357.key' -O /etc/apk/keys/cli@doppler-8004D9FF50437357.rsa.pub \
+    && echo 'https://packages.doppler.com/public/cli/alpine/any-version/main' | tee -a /etc/apk/repositories \
+    && apk add doppler
 
 COPY package.json package-lock.json ./
 RUN npm ci --only=production
