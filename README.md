@@ -11,7 +11,7 @@ This repository provides authentication microservices for the Bodega platform. I
 
 Both services handle user registration, login, token issuance, and validation, and are designed for integration with Bodega's backend, frontend, and Discord bot.
 
----
+--- 
 
 ## Directory Structure
 
