@@ -11,7 +11,7 @@ FROM node:20-alpine AS prod
 WORKDIR /app
 
 # Install Doppler CLI
-RUN apk add --no-cache curl && \
+RUN apk update && apk add --no-cache curl && \
     curl -Ls https://cli.doppler.com/install.sh | sh
 
 COPY package.json package-lock.json ./
